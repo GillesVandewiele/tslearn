@@ -38,7 +38,7 @@ pipeline = GridSearchCV(
 
 X_train, y_train, _, _ = CachedDatasets().load_dataset("Trace")
 
-# Keep only timeseries of class 0, 1 or 2
+# Keep only timeseries of class 1, 2, 3
 X_train = X_train[y_train > 0]
 y_train = y_train[y_train > 0]
 
@@ -56,7 +56,7 @@ plt.tight_layout()
 plt.show()
 
 # Fit our pipeline
-print(end='Performing hyper-parameter tuning of KNN classifier...')
+print(end='Performing hyper-parameter tuning of KNN classifier... ')
 pipeline.fit(X_train, y_train)
 results = pipeline.cv_results_
 

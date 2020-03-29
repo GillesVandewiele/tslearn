@@ -45,7 +45,6 @@ shapelet_sizes = grabocka_params_to_shapelet_size_dict(n_ts=n_ts,
 # Define the model and fit it using the training data
 shp_clf = ShapeletModel(n_shapelets_per_size=shapelet_sizes,
                         weight_regularizer=.01,
-                        batch_size=32,
                         max_iter=100,
                         verbose=0,
                         random_state=42)
